@@ -1,14 +1,17 @@
 import json 
-from channels.generic.websocket import WebsocketConsumer
+from channels.generic.websocket import AsyncWebsocketConsumer
 
-class MiSocketConsumer(WebsocketConsumer):
-    def connect(self):
-        self.accept()
+class MiSocketConsumer(AsyncWebsocketConsumer):
+    async def connect(self):
+        await self.accept()
 
-    def disconnect(self):
-        pass
+    async def disconnect(self,close_code):
+        print("se cayo esta talla")
 
-    def receive(self,text_data):
-        pass
+    async def receive(self,text_data):
+        data = json.loads(text_data)
+        #print(data['mensaje'])
+        await self.send(text_data=json.dumps({ 'mensaje': "Funciona"}))
+
 
     
