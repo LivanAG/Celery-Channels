@@ -11,6 +11,24 @@
 
     <h1>Este es mi index</h1>
     <p id='este'> Este</p>
-   
+    <script>
+        const Misocket = new WebSocket('ws://'+ window.location.host + '/ws/miSocket/')
+
+        Misocket.onmessage = function(e){
+            const data = JSON.parse(e.data);
+            parrafo = document.getElementById('este')
+
+            parrafo.textContent += " " + data['mensaje']
+
+        }
+
+        function EnviarMensaje(){
+            Misocket.send( JSON.stringify({'mensaje':'dale que te fuiste'}) )
+        }
+
+        setInterval(EnviarMensaje,5000)
+        
+        
+    </script>
 </body>
 </html>
