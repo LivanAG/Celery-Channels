@@ -1,3 +1,0 @@
-pip install twisted Apps/Controlador/static/Controlador/Twisted-20.3.0-cp38-cp38-win_amd64.whl
-
-pip install hiredis Apps/Controlador/static/Controlador/hiredis-1.1.0-cp38-cp38-win_amd64.whl
