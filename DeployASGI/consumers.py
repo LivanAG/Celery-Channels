@@ -10,7 +10,6 @@ class MiSocketConsumer(AsyncWebsocketConsumer):
 
     async def receive(self,text_data):
         data = json.loads(text_data)
-        #print(data['mensaje'])
         await self.send(text_data=json.dumps({ 'mensaje': "Funciona"}))
 
 
