@@ -2,3 +2,5 @@ django
 django-heroku
 channels
 daphne
+channels_redis
+redis
