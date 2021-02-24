@@ -30,7 +30,7 @@ SECRET_KEY = 'dxlj9^o!#9snwk##yywtc9uupiu@-b5$a04yrj2y^voh#bp^cc'
 DEBUG = False
 
 ALLOWED_HOSTS = [
-'https://miprimersitiowebconchannels.herokuapp.com',
+'https://appdepruebaaa.herokuapp.com',
 'localhost',
 '127.0.0.1']
 
