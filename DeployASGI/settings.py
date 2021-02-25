@@ -78,18 +78,24 @@ TEMPLATES = [
 #WSGI_APPLICATION = 'DeployASGI.wsgi.application'
 
 ASGI_APPLICATION = 'DeployASGI.asgi.application'
-
+'''
 CHANNEL_LAYERS = {
     "default": {
         "BACKEND": "channels_redis.RedisChannelLayer",
         "CONFIG": {
             "hosts": [os.environ.get('REDIS_URL', 'redis://localhost:6379')],
         },
-        "ROUTING": "DeployASGI.routing.websocket_urlpatterns",
     },
 }
-
-
+'''
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": ["redis://:p5da7fd960e091b8d5e36dec4f346749216d17f43b6c54eb98396435fcdc04275@ec2-54-86-106-10.compute-1.amazonaws.com:14669"],
+        },
+    },
+} 
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
