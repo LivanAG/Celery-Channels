@@ -79,14 +79,7 @@ TEMPLATES = [
 
 ASGI_APPLICATION = 'DeployASGI.asgi.application'
 
-CHANNEL_LAYERS = {
-    "default": {
-        "BACKEND": "channels_redis.RedisChannelLayer",
-        "CONFIG": {
-            "hosts": [os.environ.get('REDIS_URL', 'redis://localhost:6379')],
-        },
-    },
-}
+
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
