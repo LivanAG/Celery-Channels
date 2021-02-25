@@ -4,3 +4,6 @@ channels
 daphne
 channels_redis
 redis
+celery
+gevent    
+
