@@ -79,6 +79,16 @@ TEMPLATES = [
 
 ASGI_APPLICATION = 'DeployASGI.asgi.application'
 
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels_redis.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [os.environ.get('REDIS_URL', 'redis://localhost:6379')],
+        },
+        "ROUTING": "DeployASGI.routing.websocket_urlpatterns",
+    },
+}
+
 
 
 # Database
